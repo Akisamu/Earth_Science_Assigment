@@ -35,9 +35,6 @@ for t in T_values:
 # 画图
 plt.figure(figsize=(16, 9))
 plt.plot(T_values, P_values, label='P vs T', color='green')
-plt.xlim(500, 2000)  # 横轴：300 到 2000
-plt.ylim(0, 80)      # 纵轴：1 到 10
-plt.yticks(np.arange(0, 81, 5))
 plt.xlabel('T (k)')
 plt.ylabel('P (kbar)')
 plt.title('P-T Relationship from Given Equation')
