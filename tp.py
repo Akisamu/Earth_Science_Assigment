@@ -12,7 +12,7 @@ a, b, c, d = aq-ac, (bq-bc)*1e-5, cq-cc, dq-dc
 
 # ΔH(298,1) 和 ΔS(298,1)，单位可根据体系调整
 delta_H_298_1 =  (-905.52) - (-910.88) # J/mol
-delta_S_298_1 = -1.1e-3   # J/mol·K
+delta_S_298_1 = (40.80 - 41.50) * 1e-3   # J/mol·K
 delta_v_298_1 = 2.064 - 2.269   # kJ/kbar
 
 exp_delta_Cp = a*T + b*T + c*T**(-2) + d*T**(-0.5)
@@ -35,9 +35,12 @@ for t in T_values:
 # 画图
 plt.figure(figsize=(16, 9))
 plt.plot(T_values, P_values, label='P vs T', color='green')
+plt.xlim(500, 2000) 
+plt.ylim(0, 80) 
+plt.yticks(np.arange(0, 81, 5))
 plt.xlabel('T (k)')
 plt.ylabel('P (kbar)')
-plt.title('P-T Relationship from Given Equation')
+plt.title('P-T Relationship')
 plt.grid(True)
 plt.legend()
 plt.show()
