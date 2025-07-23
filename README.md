@@ -20,6 +20,7 @@
 |      |                  |                  |                              |                     |        |         |        |         |
 
 <hr>
+
 ## Program
 
 #### needed package 
@@ -37,8 +38,8 @@ P = symbols('P')
 T = symbols('T')
 
 # Cp parameter
-aq, bq, cq, dq = 0.0965, -0.0577e-5, -444.8, -0.7982
-ac, bc, cc, dc = 0.1107, -0.5189-5, 0.0, -1.1283
+aq, bq, cq, dq = 0.0965, -0.0577, -444.8, -0.7982
+ac, bc, cc, dc = 0.1107, -0.5189, 0.0, -1.1283
 a, b, c, d = aq-ac, (bq-bc)*1e-5, cq-cc, dq-dc 
 
 # ΔH(298,1) and ΔS(298,1)
