@@ -47,7 +47,7 @@ delta_H_298_1 =  (-905.52) - (-910.88) # J/mol
 delta_S_298_1 = (40.80 - 41.50) * 1e-3   # J/mol·K
 delta_v_298_1 = 2.064 - 2.269   # kJ/kbar 
 
-exp_delta_Cp = a*T + b*T + c*T**(-2) + d*T**(-0.5)
+exp_delta_Cp = a + b*T + c*T**(-2) + d*T**(-0.5)
 
 expr = (delta_H_298_1 + integrate(exp_delta_Cp , (T,298,T)) + integrate(delta_v_298_1 ,(P,1,P))) - T*((delta_S_298_1) + integrate(exp_delta_Cp/T ,(T,298,T)))
 
