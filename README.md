@@ -112,7 +112,7 @@ T = symbols('T')
 
 class Minecraft:
 
-	# init mineral by gaven data
+    # init mineral by gaven data
     def __init__(self, abcd: tuple, h: float, s: float, v: float):
         a, b, c, d = abcd
         self.abcd = (a, b*1e-5, c, d)
@@ -124,7 +124,7 @@ class Minecraft:
             'P_values': []
         }
 
-	# get (∆a, ∆b, ∆c, ∆d)
+    # get (∆a, ∆b, ∆c, ∆d)
     def get_delta_abce_transform_to(self, after: 'Minecraft') -> tuple:
         return (
             after.abcd[0] - self.abcd[0],
@@ -133,19 +133,19 @@ class Minecraft:
             after.abcd[3] - self.abcd[3]
         )
 
-	# get ∆H
+    # get ∆H
     def get_delta_h_transform_to(self, after: 'Minecraft') -> float:
         return after.h - self.h
 
-	# get ∆S
+    # get ∆S
     def get_delta_s_transform_to(self, after: 'Minecraft') -> float:
         return after.s - self.s
 
-	# get ∆v
+    # get ∆v
     def get_delta_v_transform_to(self, after: 'Minecraft') -> float:
         return after.v - self.v
 
-	# get expression of ∆G
+    # get expression of ∆G
     @classmethod
     def get_expr_of_delta_g(cls, delta_abcd: tuple, delta_h: float, delta_s: float, delta_v: float) -> any:
         a, b, c, d = delta_abcd
@@ -153,7 +153,7 @@ class Minecraft:
         expr = (delta_h + integrate(exp_delta_Cp , (T,298,T)) + integrate(delta_v ,(P,1,P))) - T*(delta_s + integrate((exp_delta_Cp)/T ,(T,298,T)))
         return expr
 
-	# solve the equation
+    # solve the equation
     @classmethod
     def sub_solve(cls, expr, eqauls, start, stop):
         T_values = np.linspace(start, stop, stop-start)
